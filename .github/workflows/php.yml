@@ -58,6 +58,6 @@ jobs:
       with:
           context: .
           file: ./php.Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
-          push: true
-          tags: php:latest
+          #platforms: linux/amd64,linux/arm64,linux/386
+          load: true
+    - run: docker push php:latest
