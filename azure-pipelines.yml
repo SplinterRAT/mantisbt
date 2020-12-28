@@ -1,4 +1,5 @@
 # Docker
+
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -25,7 +26,3 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
-        qualifyImageNames: true
-        buildImages: true
-        abortOnContainerExit: true
-        detached: false
