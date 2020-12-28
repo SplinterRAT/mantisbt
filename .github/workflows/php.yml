@@ -34,11 +34,12 @@ jobs:
     
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
-    - name: run tests
-      run: |
-        chmod +x bin/phpunit
-        bin/phpunit AllTests.php
-      working-directory: tests
+    - name: PHPUnit Tests
+      uses: php-actions/phpunit@dynamic-docker
+      with:
+          bootstrap: vendor/autoload.php
+          configuration: test/phpunit.xml
+          args: --coverage-text
   docker:
     needs: [restore_dependencies]
     runs-on: ubuntu-latest
