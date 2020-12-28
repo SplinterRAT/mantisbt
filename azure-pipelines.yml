@@ -24,14 +24,14 @@ stages:
       inputs:
         containerRegistry: 'AzureConnectionRegistry'
         command: 'buildAndPush'
-        repository: 'mantis'
+        repository: 'mantisphp'
         Dockerfile: '**/php.Dockerfile'
         tags: 
     - task: Docker@2
       inputs:
         containerRegistry: 'AzureConnectionRegistry'
         command: 'buildAndPush'
-        repository: 'mantis'
+        repository: 'mantisdb'
         Dockerfile: '**/mysql.Dockerfile'
         tags: 
     - task: AzureWebAppContainer@1
