@@ -9,7 +9,7 @@ env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_MANTIS }}  
 
 jobs:
-  restore dependencies:
+  restore_dependencies:
 
     runs-on: ubuntu-latest
 
@@ -35,9 +35,12 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
     - name: run tests
-      run: /usr/bin/php -f bin/phpunit ./tests/AllTests.php
+      run: |
+        chmod +x bin/phpunit
+        bin/phpunit AllTests.php
+      working-directory: tests
   docker:
-    needs: [restore dependencies]
+    needs: [restore_dependencies]
     runs-on: ubuntu-latest
 
     steps:
