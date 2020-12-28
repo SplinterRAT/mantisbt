@@ -1,8 +1,9 @@
 services:
   web:
-    build:
-        context: . 
-        dockerfile: php.Dockerfile
+    image: mantiscr.azurecr.io/mantisphp
+#    build:
+#        context: . 
+#        dockerfile: php.Dockerfile
 #    ports:
 #        - "80:80"
     init: true
@@ -11,7 +12,7 @@ services:
     networks:
         - mantisbt
   mysql:
-    image: mysql:latest
+    image: mantiscr.azurecr.io/mantisdb
 #    ports:
 #       - "3306:3306"
     volumes:
