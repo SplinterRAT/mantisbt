@@ -21,14 +21,18 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps: 
-    - task: DockerCompose@0
+    - task: Docker@2
       inputs:
-        containerregistrytype: 'Azure Container Registry'
-        azureSubscription: 'Azure subscription 1(1968bd26-a8cc-43d9-ba28-e41e6587c830)'
-        azureContainerRegistry: '{"loginServer":"mantiscr.azurecr.io", "id" : "/subscriptions/1968bd26-a8cc-43d9-ba28-e41e6587c830/resourceGroups/mantisbttest_group/providers/Microsoft.ContainerRegistry/registries/mantiscr"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'push'
+        containerRegistry: 'AzureConnectionRegistry'
+        command: 'buildAndPush'
+        Dockerfile: '**/php.Dockerfile'
+        tags: 
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'AzureConnectionRegistry'
+        command: 'buildAndPush'
+        Dockerfile: '**/mysql.Dockerfile'
+        tags: 
     - task: AzureWebAppContainer@1
       inputs:
         azureSubscription: 'Azure subscription 1(1968bd26-a8cc-43d9-ba28-e41e6587c830)'
