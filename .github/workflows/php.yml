@@ -38,7 +38,7 @@ jobs:
       uses: php-actions/phpunit@dynamic-docker
       with:
           bootstrap: vendor/autoload.php
-          configuration: test/phpunit.xml
+          configuration: vendor/phpunit/phpunit/phpunit.xml
           args: --coverage-text
   docker:
     needs: [restore_dependencies]
