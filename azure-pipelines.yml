@@ -32,5 +32,5 @@ stages:
     - task: AzureWebAppContainer@1
       inputs:
         azureSubscription: 'Azure subscription 1(1968bd26-a8cc-43d9-ba28-e41e6587c830)'
-        appName: 'mantisbprod'
+        appName: 'mantisbproduction'
         multicontainerConfigFile: '**/docker-compose.yml'
