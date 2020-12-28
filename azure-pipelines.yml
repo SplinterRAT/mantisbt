@@ -20,7 +20,14 @@ stages:
     displayName: Build
     pool:
       vmImage: 'ubuntu-latest'
-    steps:
+    steps: 
+    - task: DockerCompose@0
+      displayName: Container registry login
+      inputs:
+        containerregistrytype: Azure Container Registry
+        azureSubscriptionEndpoint: 1968bd26-a8cc-43d9-ba28-e41e6587c830
+        azureContainerRegistry: mantistest.azurecr.io
+        projectName: mantisbt
     - task: AzureWebAppContainer@1
       inputs:
         azureSubscription: 'Azure subscription 1(1968bd26-a8cc-43d9-ba28-e41e6587c830)'
