@@ -25,5 +25,5 @@ steps:
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
 
-- script: vendor/bin/phpunit ./tests/Mantis/HelperTest.php
+- script: vendor/bin/phpunit ./tests/AllTests.php
   displayName: 'Run tests with phpunit'
