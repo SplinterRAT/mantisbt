@@ -9,7 +9,7 @@ env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_MANTIS }}  
 
 jobs:
-  build:
+  restore dependencies:
 
     runs-on: ubuntu-latest
 
@@ -36,3 +36,11 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
     - name: run tests
       run: /usr/bin/php -f bin/phpunit ./tests/AllTests.php
+  docker:
+    needs: [restore dependencies]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the docker-compose stack
+      run: docker-compose up -d
