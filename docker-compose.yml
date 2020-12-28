@@ -12,7 +12,7 @@ services:
     networks:
         - mantisbt
   mysql:
-    image: mantiscr.azurecr.io/mantisdb
+    image: mysql:latest
 #    ports:
 #       - "3306:3306"
     volumes:
