@@ -25,7 +25,6 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'rm -all'
         qualifyImageNames: true
         buildImages: true
         abortOnContainerExit: true
