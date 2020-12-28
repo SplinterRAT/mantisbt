@@ -61,5 +61,5 @@ jobs:
           context: .
           file: ./php.Dockerfile
           repository: cybergypsy/mantisbt_test
-          tags: php:latest 
+          tags: latest 
           #platforms: linux/amd64,linux/arm64,linux/386
