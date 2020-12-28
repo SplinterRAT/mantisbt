@@ -37,7 +37,7 @@ jobs:
     - name: PHPUnit Tests
       uses: php-actions/phpunit@dynamic-docker
       with:
-          bootstrap: vendor/autoload.php
+          bootstrap: vendor/phpunit/phpunit/bootstrap.php
           configuration: vendor/phpunit/phpunit/phpunit.xml
           args: --coverage-text
   docker:
