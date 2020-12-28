@@ -15,7 +15,7 @@ services:
 #    ports:
 #       - "3306:3306"
     volumes:
-       - ./:/var/lib/mysql
+       -  /mantisdb:/var/lib/mysql
 #    build:
 #        context: .
 #        dockerfile: mysql.Dockerfile
