@@ -45,7 +45,7 @@ Installation
  * Remove the admin/ directory from within the MantisBT installation path. The
    scripts within this directory should not be accessible on a live MantisBT
    site or on any installation that is accessible via the Internet.
-
+ * test
 UPGRADING
 ---------
 
