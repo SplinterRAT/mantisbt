@@ -1,5 +1,5 @@
 services:
-  web:
+  phpserver:
     build:
         context: . 
         dockerfile: php.Dockerfile
