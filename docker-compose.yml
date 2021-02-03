@@ -8,8 +8,8 @@ services:
     init: true
     depends_on:
         - mysql
-    networks:
-        - mantisbt
+    #networks:
+    #    - mantisbt
   mysql:
     image: mysql:latest
 #    ports:
@@ -30,7 +30,7 @@ services:
          MYSQL_PASSWORD: test_pass
          MYSQL_ROOT_HOST: '%'     
 #    init: true
-    networks:
-        - mantisbt
-networks:
-   mantisbt:
+   # networks:
+   #    - mantisbt
+#networks:
+#   mantisbt:
