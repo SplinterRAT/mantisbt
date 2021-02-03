@@ -6,7 +6,7 @@ services:
         dockerfile: php.Dockerfile
 #    ports:
 #        - "80:80"
-    init: true
+#    init: true
     depends_on:
         - mysql
     networks:
